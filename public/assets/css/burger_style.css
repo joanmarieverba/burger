@@ -1,11 +1,32 @@
 body {
     background-color: goldenrod;
+    font-family: Roboto;
 }
 
 .center {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    height: 30px;
-    width: 250px;
+    height: 200px;
+    width: 200px;
+}
+
+.textcenter {
+    text-align: center;
+}
+
+h1 {
+    color: brown;
+}
+
+.bluebutton {
+    background-color: #008CBA;
+}
+
+.inputbox {
+    width: 350px;
+}
+
+ul {
+  list-style-type: none;
 }
