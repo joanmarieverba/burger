@@ -1,0 +1,65 @@
+<div><img src="/assets/img/hamburger-L.jpg" class="center" alt="Powered by Giphy"></div>
+<h1 class="center">Eat-Da-Burger!</h1>
+
+<ul>
+    {{#each burgers}}
+    <li>
+        <p>
+            {{this.id}}. {{this.burger_name}}
+
+            <button data-burgerid="{{this.id}}" class="eat-burger">Devour It!</button>
+        </p>
+    </li>
+    {{/each}}
+</ul>
+
+    
+<form id="btnform" class="inputbutton">
+    <input type="text" id="btninput">
+    <input id="addburger" type="submit" value="Submit">
+</form>
+
+<h2>Enter the name of a burger you want to eat. Click the "Submit" button.</h2>
+
+
+<script type="text/javascript">
+
+
+    $("#addburger").on("submit", function (event) {
+        // Make sure to preventDefault on a submit event.
+        event.preventDefault();
+
+        {{!-- let newBurger = {
+            movie: $("#addmovie [name=movie]").val().trim()
+        }; --}}
+
+        // Send the POST request.
+        {{!-- $.ajax("/movies", {
+            type: "POST",
+            data: newMovie
+        }).then(
+            function () {
+                console.log("added new movie");
+                // Reload the page to get the updated list
+                location.reload();
+            }
+        ); --}}
+    });
+
+    $("#data-burgerid").on("submit", function (event) {
+        // Make sure to preventDefault on a submit event.
+        event.preventDefault();
+
+        // Send the PUT request.
+        {{!-- $.ajax("/movies/" + id, {
+            type: "PUT",
+            data: updatedMovie
+        }).then(
+            function () {
+                console.log("updated id ", id);
+                // Reload the page to get the updated list
+                location.reload();
+            }
+        ); --}}
+    });
+</script>

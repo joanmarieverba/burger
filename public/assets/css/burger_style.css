@@ -1,3 +1,11 @@
 body {
-    background-image: url("./burger-sign.jpg")
+    background-color: goldenrod;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 30px;
+    width: 250px;
 }
