@@ -1,4 +1,4 @@
-<div><img src="/assets/img/hamburger-LT.png" class="center" alt="Powered by Giphy"></div>
+<div><img src="/assets/img/hamburger-LT.png" class="center" alt="burger image"></div>
 <h1 class="textcenter">Eat-Da-Burger!</h1>
 
 <ul>
@@ -24,17 +24,17 @@
 
 <script type="text/javascript">
 
-
-    $("#addburger").on("submit", function (event) {
+    $("#addburger").on("click", function (event) {
         // Make sure to preventDefault on a submit event.
         event.preventDefault();
 
         let inputBurger = $("#burgerinput").val().trim();
 
         let newBurger = [inputBurger, false];
+        console.log("newBurger ", newBurger);
 
         // Send the POST request.
-        $.ajax("/burgers", {
+        $.ajax("/api/burgers", {
             type: "POST",
             data: newBurger
         }).then(
@@ -46,9 +46,11 @@
         );
     });
 
-    $("#data-burgerid").on("submit", function (event) {
+    $("#data-burgerid").on("click", function (event) {
         // Make sure to preventDefault on a submit event.
         event.preventDefault();
+
+        console.log("devour it clicked");
 
         // Send the PUT request.
         {{!-- $.ajax("/movies/" + id, {
