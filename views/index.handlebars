@@ -15,7 +15,7 @@
 
     
 <form id="btnform" class="inputbutton textcenter">
-    <input type="text" class="inputbox" id="btninput">
+    <input type="text" class="inputbox" id="burgerinput">
     <p><input id="addburger" class="bluebutton" type="submit" value="Submit"></p>
 </form>
 
@@ -29,9 +29,10 @@
         // Make sure to preventDefault on a submit event.
         event.preventDefault();
 
-        {{!-- let newBurger = {
-            movie: $("#addmovie [name=movie]").val().trim()
-        }; --}}
+        let newBurger = {
+            burger_name: $("#burgerinput").val().trim(),
+            devoured: false
+        };
 
         // Send the POST request.
         {{!-- $.ajax("/movies", {
