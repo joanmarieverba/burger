@@ -30,7 +30,10 @@
 
         let inputBurger = $("#burgerinput").val().trim();
 
-        let newBurger = [inputBurger, false];
+        let newBurger = {
+            burger_name: inputBurger,
+            devoured: false
+        };
         console.log("newBurger ", newBurger);
 
         // Send the POST request.
@@ -46,7 +49,7 @@
         );
     });
 
-    $("#data-burgerid").on("click", function (event) {
+    $(".eat-burger").on("click", function (event) {
         // Make sure to preventDefault on a submit event.
         event.preventDefault();
 
