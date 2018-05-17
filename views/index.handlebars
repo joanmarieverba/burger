@@ -29,22 +29,21 @@
         // Make sure to preventDefault on a submit event.
         event.preventDefault();
 
-        let newBurger = {
-            burger_name: $("#burgerinput").val().trim(),
-            devoured: false
-        };
+        let inputBurger = $("#burgerinput").val().trim();
+
+        let newBurger = [inputBurger, false];
 
         // Send the POST request.
-        {{!-- $.ajax("/movies", {
+        $.ajax("/burgers", {
             type: "POST",
-            data: newMovie
+            data: newBurger
         }).then(
             function () {
-                console.log("added new movie");
+                console.log("added new burger");
                 // Reload the page to get the updated list
                 location.reload();
             }
-        ); --}}
+        );
     });
 
     $("#data-burgerid").on("submit", function (event) {

@@ -70,17 +70,12 @@ let orm = {
             cb(result);
         });
     },
-    // An example of objColVals would be {name: panther, sleepy: true}
-    updateOne: function (table, objColVals, condition, cb) {
-        var queryString = "UPDATE " + table;
-
-        queryString += " SET ";
-        queryString += objToSql(objColVals);
-        queryString += " WHERE ";
-        queryString += condition;
+    // Update is to update devour from false to true
+    updateOne: function (table, changeArray, cb) {
+        var queryString = "UPDATE " + table + " SET ? WHERE ?";
 
         console.log(queryString);
-        connection.query(queryString, function (err, result) {
+        connection.query(queryString, changeArray, function (err, result) {
             if (err) {
                 throw err;
             }
@@ -90,6 +85,9 @@ let orm = {
     },
 
 };
+
+
+
 
 // Export the orm object for the model (burger.js)
 module.exports = orm;
