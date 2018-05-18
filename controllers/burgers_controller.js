@@ -29,8 +29,8 @@ router.put("/api/burgers/:id", function (req, res) {
     let burger_id = req.params.id;
     console.log("burger_id", burger_id);
 
-    burger.updateOne([{ devoured: true }, { item_id: burger_id }], function (error) {
-        if (error) throw err;
+    burger.updateOne([{ devoured: true }, {id: burger_id }], function (error) {
+        if (error) throw error;
     });
 });
 
