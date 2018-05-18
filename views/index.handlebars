@@ -1,27 +1,24 @@
 <div><img src="/assets/img/hamburger-LT.png" class="center" alt="burger image"></div>
 <h1 class="textcenter">Eat-Da-Burger!</h1>
 
-<ul>
-    {{#each burgers}}
 
+{{#each burgers}} 
+
+    <div class="row">
+        {{#unless devoured}}
+            <div class="col-md-2"></div>
+            <div class="col-md-3">{{this.id}}. {{this.burger_name}}</div>
+            <div class="col-md-2"><button data-burgerid="{{this.id}}" class="eat-burger">Devour It!</button></div>
+        {{/unless}}
         {{#if devoured}}
-
-        <p class="right">{{this.id}}. {{this.burger_name}}</p>
-
-        {{else}}
-
-        <li>
-            <p>
-                {{this.id}}. {{this.burger_name}}
-
-                <button data-burgerid="{{this.id}}" class="eat-burger">Devour It!</button>
-            </p>
-        </li>
-
+            <div class="col-md-7"></div>
+            <div class="col-md-5 right">{{this.id}}. {{this.burger_name}}</div>
         {{/if}}
+    </div>
 
-    {{/each}}
-</ul>
+{{/each}}
+
+<div class="row space">
 
     
 <form id="btnform" class="inputbutton textcenter">
@@ -31,6 +28,7 @@
 
 <h5 class="textcenter">Enter the name of a burger you want to eat. Click the "Submit" button.</h5>
 
+</div>
 
 <script type="text/javascript">
 
