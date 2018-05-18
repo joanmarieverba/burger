@@ -1,32 +1,41 @@
 <div><img src="/assets/img/hamburger-LT.png" class="center" alt="burger image"></div>
 <h1 class="textcenter">Eat-Da-Burger!</h1>
 
+<div class="row">
 
-{{#each burgers}} 
-
-    <div class="row">
+    <div class="col-md-7">
+        {{#each burgers}}
         {{#unless devoured}}
-            <div class="col-md-2"></div>
-            <div class="col-md-3">{{this.id}}. {{this.burger_name}}</div>
+        <div class="row">
+            <div class="col-md-5"></div>
+            <div class="col-md-4">{{this.id}}. {{this.burger_name}}</div>
             <div class="col-md-2"><button data-burgerid="{{this.id}}" class="eat-burger">Devour It!</button></div>
-        {{/unless}}
-        {{#if devoured}}
-            <div class="col-md-7"></div>
-            <div class="col-md-5 right">{{this.id}}. {{this.burger_name}}</div>
-        {{/if}}
+        </div>
+        {{/unless}} 
+        {{/each}}
+    </div>    
+
+    <div class="col-md-5">
+        {{#each burgers}}
+            {{#if devoured}}
+                <div class="row">
+                    <div class="right">{{this.id}}. {{this.burger_name}}</div>
+                </div>
+            {{/if}}
+        {{/each}}
     </div>
 
-{{/each}}
+</div>
+
 
 <div class="row space">
+   
+    <form id="btnform" class="inputbutton textcenter">
+        <input type="text" class="inputbox" id="burgerinput">
+        <p><input id="addburger" class="bluebutton" type="submit" value="Submit"></p>
+    </form>
 
-    
-<form id="btnform" class="inputbutton textcenter">
-    <input type="text" class="inputbox" id="burgerinput">
-    <p><input id="addburger" class="bluebutton" type="submit" value="Submit"></p>
-</form>
-
-<h5 class="textcenter">Enter the name of a burger you want to eat. Click the "Submit" button.</h5>
+    <h5 class="textcenter">Enter the name of a burger you want to eat. Click the "Submit" button.</h5>
 
 </div>
 
