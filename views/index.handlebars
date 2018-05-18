@@ -3,13 +3,23 @@
 
 <ul>
     {{#each burgers}}
-    <li>
-        <p>
-            {{this.id}}. {{this.burger_name}}
 
-            <button data-burgerid="{{this.id}}" class="eat-burger">Devour It!</button>
-        </p>
-    </li>
+        {{#if devoured}}
+
+        <p class="right">{{this.id}}. {{this.burger_name}}</p>
+
+        {{else}}
+
+        <li>
+            <p>
+                {{this.id}}. {{this.burger_name}}
+
+                <button data-burgerid="{{this.id}}" class="eat-burger">Devour It!</button>
+            </p>
+        </li>
+
+        {{/if}}
+
     {{/each}}
 </ul>
 
@@ -55,16 +65,20 @@
 
         console.log("devour it clicked");
 
+        console.log("button id ", $(this).data("burgerid")  );
+
+        let id = $(this).data("burgerid");
+
         // Send the PUT request.
-        {{!-- $.ajax("/movies/" + id, {
+        $.ajax("/api/burgers/" + id, {
             type: "PUT",
-            data: updatedMovie
+            data: id
         }).then(
             function () {
                 console.log("updated id ", id);
                 // Reload the page to get the updated list
                 location.reload();
             }
-        ); --}}
+        );
     });
 </script>

@@ -13,8 +13,8 @@ let burger = {
             cb(res);
         });
     },
-    updateOne: function (changeArray, cb) {
-        orm.updateOne("burgers", changeArray, function (res) {
+    updateOne: function (id, cb) {
+        orm.updateOne("burgers", id, function (res) {
             cb(res);
         });
     },

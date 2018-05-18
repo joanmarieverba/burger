@@ -34,11 +34,11 @@ let orm = {
 
 
     // Update is to update devour from false to true
-    updateOne: function (table, changeArray, cb) {
+    updateOne: function (table, id, cb) {
         var queryString = "UPDATE " + table + " SET ? WHERE ?";
 
         console.log(queryString);
-        connection.query(queryString, changeArray, function (err, result) {
+        connection.query(queryString, id, function (err, result) {
             if (err) {
                 throw err;
             }

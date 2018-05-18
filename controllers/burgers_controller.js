@@ -8,11 +8,11 @@ let burger = require("../models/burger.js");
 // Create all our routes and set up logic within those routes where required.
 router.get("/", function (req, res) {
     burger.selectAll(function (data) {
-        let hbsObject = {
+        let allBurgers = {
             burgers: data
         };
-        console.log("index", hbsObject);
-        res.render("index", hbsObject);
+        console.log("index", allBurgers);
+        res.render("index", allBurgers);
     });
 });
 
@@ -25,11 +25,11 @@ router.post("/api/burgers", function (req, res) {
 });
 
 router.put("/api/burgers/:id", function (req, res) {
-    let burger_id = "id = " + req.params.id;
-
+    //let burger_id = "id = " + req.params.id;
+    let burger_id = req.params.id;
     console.log("burger_id", burger_id);
 
-    burger.updateOne(burgers,[{ devoured: false }, { item_id: burger_id }], function (error) {
+    burger.updateOne([{ devoured: true }, { item_id: burger_id }], function (error) {
         if (error) throw err;
     });
 });
