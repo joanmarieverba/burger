@@ -5,7 +5,6 @@ let connection = require("../config/connection.js");
 let orm = {
     selectAll: function (tableInput, cb) {
         let queryString = "SELECT * FROM " + tableInput + ";";
-        //let queryString = "SELECT * FROM " + tableInput + " WHERE devoured=false;";
         connection.query(queryString, function (err, result) {
             if (err) {
                 throw err;
