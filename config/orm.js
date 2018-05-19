@@ -50,7 +50,7 @@ let orm = {
 };
 
 
-
+//connection.query("UPDATE products SET ? WHERE ?", [{ stock_quantity: newTotal }, { item_id: answer.productID }], function (error) {
 
 // Export the orm object for the model (burger.js)
 module.exports = orm;
