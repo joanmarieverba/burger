@@ -1,6 +1,8 @@
 # burger
-Class exercise: burger restaurant
-A MySQL application
+Class exercise: burger restaurant  
+
+A MySQL application  
+
 Here's how it works:   
 1. Enter the name of a burger in the input field. Click on the "submit" button.  
 2. The name of the burger is added at the left side of the screen, along with a "devour" button.  
