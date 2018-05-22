@@ -25,7 +25,6 @@ router.post("/api/burgers", function (req, res) {
 });
 
 router.put("/api/burgers/:id", function (req, res) {
-    //let burger_id = "id = " + req.params.id;
     let burger_id = req.params.id;
     console.log("burger_id", burger_id);
 
