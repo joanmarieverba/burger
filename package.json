@@ -20,7 +20,7 @@
   "dependencies": {
     "body-parser": "^2.4.0",
     "express": "^5.2.1",
-    "express-handlebars": "^8.0.6",
+    "express-handlebars": "^9.0.4",
     "mysql": "^2.15.0"
   }
 }
